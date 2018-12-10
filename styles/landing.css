@@ -1,0 +1,120 @@
+h1 {
+    font-family: Roboto, Verdana;
+    font-size: 4vh;
+    font-weight: normal;
+    color: #fcfcfc;
+}
+p#subheader{
+    font-family: Roboto, Verdana;
+    font-size: 3vh;
+    font-weight: lighter;
+    color: #fcfcfc;
+}
+b{
+    color: goldenrod;
+}
+div#center {
+    background-color: #004071;
+    margin: 5vh 5vw;
+    padding: 3vh 3vw;
+    text-align: center;
+}
+body {
+    background-image: url(../img/background.jpg);
+    margin:0;
+}
+input#link{
+    padding-right:1vh;
+    padding-left:1vh;
+    height: 10vh;
+    width: 40vh;
+    justify-content: center;
+    font-size:2vh;
+    font-family: Roboto, Verdana;
+    font-weight: bold;
+    color: grey;
+    border-width: 0;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+}
+img{
+    min-height: 50px;
+    height: 15%;
+    margin: 2vw;
+}
+label{
+    display: inline-block; 
+    background:url(../img/copy.png) 50% 50% no-repeat;
+    background-size:contain;  
+    height:4.2vh; 
+    width:4.2vh; 
+    margin-left: -5.7vh;
+    margin-bottom: -0.5vh;
+}
+.notice{
+    color: #dd5858;
+    font-size: 2vh;
+    font-family: Roboto, Verdana;
+    font-style: italic;
+    display: none;
+}
+p#text{
+    font-family: Roboto, Verdana;
+    font-size: 2vh;
+    font-weight: lighter;
+    color: #fcfcfc;
+}
+a:link, a:visited { 
+    color: grey;
+    text-decoration: underline;
+    font-size:2vh;
+    font-family: Roboto, Verdana;
+    font-weight: bold;
+    cursor: auto;
+}
+
+@media screen and (max-width: 500px) /* Mobile */ {
+    h1 {
+        font-family: Roboto, Verdana;
+        font-size: 8vw;
+        font-weight: normal;
+        color: #fcfcfc;
+    }
+    p#subheader{
+        font-family: Roboto, Verdana;
+        font-size: 3vw;
+        font-weight: lighter;
+        color: #fcfcfc;
+    }
+    img{
+        min-height: 50px;
+        height: 10%;
+        margin: 2vw;
+    }
+    input#link{
+        height: 6vh;
+        width: 65vw;
+        min-height:30px;
+        font-size:3vw;
+    }
+    label{
+        height:5%; 
+        width:8%; 
+        min-height:25px;
+        margin-left: -10.5vw;
+        margin-bottom: -2.5vw;
+    }
+    .notice{
+        font-size: 2vw;
+    }
+    p#text{
+        font-family: Roboto, Verdana;
+        font-size: 2vw;
+        font-weight: lighter;
+        color: #fcfcfc;
+    }
+    a:link, a:visited { 
+        font-size:3vw;
+    }
+}

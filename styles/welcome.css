@@ -1,0 +1,35 @@
+div#center {
+    background-color: #004071;
+    margin: 5vh 5vw;
+    padding: 3vh 3vw;
+    text-align:center;
+}
+h1 {
+    font-family: Roboto, Verdana;
+    font-size: 6vh;
+    font-weight: bold;
+    color: #fcfcfc;
+    margin-top:5vh;
+}
+p#info{
+    font-family: Roboto, Verdana;
+    font-size: 4vh;
+    color: #fcfcfc;
+    margin-bottom:1vh;
+}
+input#submit {
+    width: 30vh; 
+    height: 6vh;
+    font-size: 2.8vh;
+    font-family: Roboto, Verdana;
+    font-weight: bold;
+    text-align:center;
+    margin: 1.5vh;
+    border-radius: 3vh;
+    background-color: #ffa70f;
+    border-width: 0;
+}
+body {
+    background-image: url(../img/background.jpg);
+    margin:0;
+}

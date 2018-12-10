@@ -1,0 +1,141 @@
+h1 {
+    font-family: Roboto, Verdana;
+    font-size: 4vh;
+    font-weight: normal;
+    color: #fcfcfc;
+}
+p#subheader{
+    font-family: Roboto, Verdana;
+    font-size: 2vh;
+    font-weight: lighter;
+    color: #fcfcfc;
+}
+div#center {
+    background-color: #004071;
+    margin: 5vh 5vw;
+    padding: 3vh 3vw;
+    text-align: center;
+}
+input#submit {
+    width: 30vh; 
+    height: 6vh;
+    font-size: 2.8vh;
+    font-family: Roboto, Verdana;
+    font-weight: bold;
+    text-align:center;
+    margin: 10px;
+    border-radius: 3vh;
+    background-color: #ffa70f;
+    border-width: 0;
+}
+body {
+    background-image: url(../img/background.jpg);
+    margin:0;
+}
+.error{
+    color: #dd5858;
+    font-size: 2vh;
+    font-family: Roboto, Verdana;
+    font-style: italic;
+}
+label {
+    vertical-align:middle;
+}
+input#code { 
+    text-transform: uppercase;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    text-transform: none;
+}
+::placeholder { /* Recent browsers */
+    text-transform: none;
+}
+.qrcode-text-btn {
+    display: inline-block; 
+    background:url(../img/qrIcon.png) 50% 50% no-repeat;
+    background-size:contain;  
+    height:4.2vh; 
+    width:4.2vh; 
+    margin-left: -5.7vh;
+    cursor:pointer;
+}
+.qrcode-text {
+    padding-right:1vh;
+    padding-left:1vh;
+    height: 6vh;
+    width: 30vh;
+    font-size:1.7vh;
+    font-family: Roboto, Verdana;
+    font-weight: bold;
+    color: grey;
+    background-color: transparent;
+    border-width: 0 0 1px 0;
+    margin: 10px;
+    border-bottom-color: grey
+}
+.qrcode-text-btn > input[type=file] {
+    position:absolute; 
+    overflow:hidden; 
+    width:1px; 
+    height:1px; 
+    opacity:0
+}
+img{
+    min-height: 50px;
+    height: 15%;
+    margin: 2vw;
+}
+
+@media screen and (max-width: 500px) /* Mobile */ {
+    h1 {
+        font-family: Roboto, Verdana;
+        font-size: 8vw;
+        font-weight: normal;
+        color: #fcfcfc;
+    }
+    p#subheader{
+        font-family: Roboto, Verdana;
+        font-size: 4vw;
+        font-weight: lighter;
+        color: #fcfcfc;
+    }
+    input#submit {
+        width: 70%; 
+        height: 6%;
+        min-height:35px;
+        border-radius: 15px;
+        font-size: 5vw;
+    }
+    .qrcode-text-btn { 
+        height:7%; 
+        width:10%; 
+        min-height:25px;
+        margin-left: -11.5vw;
+    }
+    .qrcode-text {
+        height: 6%;
+        width: 70%;
+        min-height:30px;
+        font-size:2.7vw;
+    }
+    img{
+        min-height: 50px;
+        height: 10%;
+        margin: 2vw;
+    }
+  }
+
+  @media screen and (min-height: 800px) /* long devices */ {
+    input#submit {
+        border-radius: 25px;
+    }
+  }
