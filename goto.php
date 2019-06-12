@@ -6,8 +6,13 @@ session_start();
 
 $qrcode = $_POST['qrcode'];
 
-$rpm = do_call_api('Qrcode_list',array('code'=>$qrcode));
-$code = $rpm[1];
+if(strlen($qrcode) == 4) { //injection prevention
+    $rpm = do_call_api('Qrcode_list',array('code'=>$qrcode));
+    $code = $rpm[1];
+}
+else{
+    $code = null;
+}
 
 if($code) {
     print "Successful login...";

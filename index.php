@@ -9,6 +9,8 @@ if(session_id() == '') {
 $session_namespace = "jakarta";
 
 $result = $_POST['result'];
+$result = htmlspecialchars($result); //cross-site-scripting prevention
+
 $mac = $_GET['mac'];
 $mac = preg_replace("/\:/","",$mac);
 $mac = strtolower($mac);
@@ -98,7 +100,7 @@ if ($form == 'login' || $form == 'addRadius'){
         <head> 
                 <title>QR Code Input</title>
                 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700i,700" rel="stylesheet">
-                <link rel="stylesheet" type="text/css" href="./styles/index.css">
+                <link rel="stylesheet" type="text/css" href="https://oms.cbn.net.id/styles/index.css">
                 <script type="text/javascript" src="./js/grid.js"></script>
                 <script type="text/javascript" src="./js/version.js"></script>
                 <script type="text/javascript" src="./js/detector.js"></script>
@@ -184,7 +186,7 @@ else if ($form == 'addIntranet' || $form == 'register'){
         <head> 
                 <title>Registration</title>
                 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700i,700" rel="stylesheet">
-                <link rel="stylesheet" type="text/css" href="./styles/index.css">
+                <link rel="stylesheet" type="text/css" href="https://oms.cbn.net.id/styles/index.css">
                 <script type="text/javascript" src="./js/grid.js"></script>
                 <script type="text/javascript" src="./js/version.js"></script>
                 <script type="text/javascript" src="./js/detector.js"></script>
@@ -247,7 +249,7 @@ else if ($form == 'addIntranet' || $form == 'register'){
                         <input name="name" placeholder="Full Name" class=qrcode-text /><br/>
                         <input name="email" placeholder="Email Adress" class=qrcode-text /><br/>
                         <input name="phone" placeholder="Phone Number" class=qrcode-text /><br/>
-                        <input name="institution" placeholder="School/Workplace Name" class=qrcode-text /><br/>
+                        <input name="institution" placeholder="Company Name" class=qrcode-text /><br/>
                         <br/>
                         <input id="code" type=text size=20 name="qrcode" placeholder="Enter login code" class=qrcode-text maxLength=4/>
                         <label id="qrbutton" class=qrcode-text-btn onclick="showScanner();"> </label> 

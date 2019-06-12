@@ -6,7 +6,7 @@
 <head> 
     <title> WELCOME </title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700i,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/welcome.css">
+    <link rel="stylesheet" type="text/css" href="https://oms.cbn.net.id/styles/welcome.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
 </head>
 <body>

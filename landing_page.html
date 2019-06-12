@@ -3,8 +3,8 @@
 <head>
     <title>Landing Page</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700i,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/landing.css">
-    <script type="text/javascript" src='./js/modernizr.js'> </script>
+    <link rel="stylesheet" type="text/css" href="https://oms.cbn.net.id/styles/landing.css">
+    <script type="text/javascript" src='https://oms.cbn.net.id/js/modernizr.js'> </script>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
 </head>
 
@@ -25,10 +25,6 @@
                 document.execCommand("copy");
                 document.getElementById("copied").style.display = "block";
             }
-function test(){
-	document.getElementById("subheader").value = "";
-
-}
             function detectBrowser() {
                 var isFirefox = typeof InstallTrigger !== 'undefined';
                 var isChrome = !!window.chrome && !!window.chrome.webstore;
@@ -46,7 +42,7 @@ function test(){
                         document.getElementById('landingIOS').style.display = "block";
                     }
                     else if (isBrowser) { //in case it is still browser, i.e. Safari but certainly not apple CNA
-			document.getElementById('subheader').style.display = "none";
+			            document.getElementById('subheader').style.display = "none";
                         document.getElementById('redirect').style.display = "block";
                         document.getElementById('register').click();
                     }
@@ -63,7 +59,7 @@ function test(){
             <br />
         </div>
         <div id="landingIOS" style="display:none">
-            <a href="http://10.5.50.1/register.html" target="_system">https://oms.cbn.net.id/redirect.html</a>
+            <a href="http://10.5.50.1/register.html" >https://oms.cbn.net.id/redirect.html</a>
         </div>
         <div id="redirect" style="display:none">
             <p id="text">Redirecting... if nothing happens </p>
