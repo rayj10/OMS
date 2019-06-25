@@ -5,7 +5,6 @@ include 'functions.php';
 session_start();
 
 $qrcode = $_POST['qrcode'];
-
 if(strlen($qrcode) == 4) { //injection prevention
     $rpm = do_call_api('Qrcode_list',array('code'=>$qrcode));
     $code = $rpm[1];
@@ -14,26 +13,21 @@ else{
     $code = null;
 }
 
+$phone = $_POST['phone'];
+$phone = htmlspecialchars($phone); //cross-site-scripting prevention
+if(strlen($phone) > 14) {       //injection prevention
+    $phone = null;
+}
+
 if($code) {
     print "Successful login...";
 
     #variables to register
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $institution = $_POST['institution'];
 
-    if ($_POST['form'] == "register"){
-        addUserIntranet($username, $name, $email, $phone, $institution);
+    if ($_POST['form'] == "addRadius") {
         radiusAPI(xmlrpc_encode_request("ADD",array($username, $password)));
-    }
-    else if ($_POST['form'] == "addRadius") {
-        radiusAPI(xmlrpc_encode_request("ADD",array($username, $password)));
-    }
-    else if ($_POST['form'] == "addIntranet") {
-        addUserIntranet($username, $name, $email, $phone, $institution);
     }
 
     radiusAPI(xmlrpc_encode_request("UPDATE_EXPIREDATE",$username)); # untuk update expiredate tambah 1 hari
@@ -62,6 +56,44 @@ print <<<HTML
 </html>
 HTML;
 } 
+else if ($_POST['form'] == "checkPhone" && $phone){
+    $exists = checkPhoneGuestBook($phone);
+    
+    if ($exists){
+print <<<HTML
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Redirecting</title>
+    </head>
+        <body onload="document.getElementById('frm_redirect').submit();">
+                <form id="frm_redirect" name="frm_redirect" action="index.php" method="post">
+                    <input type="hidden" name="phone" value="$phone" />
+                </form>
+        </body>
+</html>
+HTML;
+    }
+    else {
+print <<<HTML
+<html lang="en">
+    <head> 
+        <title> Oops! </title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700i,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://oms.cbn.net.id/styles/welcome.css">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
+    </head>
+    <body>
+        <div id="center">
+            <h1>Oops!</h1><hr/> 
+            <p id="info">Looks like you have not signed our GuestBook yet</p>
+            <p id="info">Please do this at our reception desk to get connected to our Wifi</p>
+        </div>
+    </body>
+</html>
+HTML;
+    }
+}
 else {
 print <<<HTML
 <html lang="en">

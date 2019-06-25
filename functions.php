@@ -15,6 +15,13 @@ function radiusAPI($request) {
     return $response;
 }
 
+function checkPhoneGuestBook($phone){
+    $request = "https://intranet.cbn.net.id/api-mob/api.php?method=OMS_GuestBook_list&handphone=".$phone."&key=xkRKJui9acBcx4CG/UAdasjajH==";
+    $data = file_get_contents($request);
+    $json_file = json_decode($data);
+    return ($json_file->GuestBook->{'0'}) > 0;
+}
+
 function checkMacIntranet($mac){
     $request = "http://10.64.2.54/api-mob/api.php?method=User_wifi_list&mac=".$mac."&key=xkRKJui9acBcx4CG/UAdasjajH==";
     $data = file_get_contents($request);

@@ -27,7 +27,7 @@ function validatePhoneNumber(phone) {
     if (simple.charAt(0) === '0')
         simple = simple.replace('0', '62');
 
-    var phoneno = /^\d{10}$|^\d{11}$|^\d{12}$|^\d{13}$/;
+    var phoneno = /^\d{10}$|^\d{11}$|^\d{12}$|^\d{13}$|^\d{14}$/;
 
     if (simple.match(phoneno)) {
         document.getElementsByName('phone')[0].value = simple;
